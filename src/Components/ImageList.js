@@ -1,4 +1,6 @@
 import React from "react";
+import "./ImageList.css";
+import ImageCard from "./ImageCard";
 
 const ImageList = (props) => {
   //   console.log(props.images);
@@ -12,11 +14,18 @@ const ImageList = (props) => {
   //   });
 
   // alternative way of rendering without the repeated use of image variable name, directly tap the values from the response
-  const images = props.images.map(({ description, id, urls }) => {
-    console.log({ description });
-    return <img key={id} src={urls.regular} alt={description} />;
+
+  // destructuring of image object
+  // const images = props.images.map(({ description, id, urls }) => {
+
+  // passing prop to other component
+  const images = props.images.map((image) => {
+    // regular return to the list builder
+    // return <img key={id} src={urls.regular} alt={description} />;
+    // component based rendering
+    return <ImageCard key={image.id} image={image} />;
   });
-  return <div>{images}</div>;
+  return <div className="image-list">{images}</div>;
 };
 
 export default ImageList;

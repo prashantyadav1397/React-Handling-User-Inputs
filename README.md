@@ -68,3 +68,19 @@ headers: {
 Authorization: "Client-ID <API Access Key>",
 },
 });
+
+### Accessing DOM using React ref
+
+<p>Adding constructor to add ref for DOM access</p>
+<p>
+ constructor(props) {
+    super(props);
+    this.state = { spans: 0 };
+    // Accessing DOM with React refs
+    this.imageRef = React.createRef();
+}
+</p>
+<p> Using ref in JSX tag</p>
+<p>
+ <img ref={this.imageRef} alt={description} src={urls.regular} />
+</p>
