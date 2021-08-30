@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
   //   }
 
   // using state to handle controlled event from user input
-  state = { term: "", password: "" };
+  state = { term: "" };
 
   //  disabling the default behavior of form with a onSubmit method
   // changing the onFormSubmit method to arrow function to avoid error state of "can't read the property of undefined"
@@ -53,6 +53,19 @@ class SearchBar extends React.Component {
               //   }}
               onChange={(e) => {
                 this.setState({ term: e.target.value });
+              }}
+            />
+
+            <input
+              value="Reset"
+              type="button"
+              className="ui button"
+              style={{
+                "padding-top": "10px",
+                "margin-top": "10px",
+              }}
+              onClick={(e) => {
+                this.setState({ term: "" });
               }}
             />
           </div>

@@ -1,10 +1,14 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import unsplash from "../API/Unsplash";
+import ImageList from "./ImageList";
+import SearchBank from "./SearchBank";
+import BanksList from "./BanksList";
+import bank from "../API/Bank";
 
 class App extends React.Component {
   // adding state to the component to handle reponse  from async requests
-  state = { images: [] };
+  state = { images: [], branches: [] };
   // method for getting a callback from the child to pass the data up the hierarchy
   onSearchSubmit = async (term) => {
     // console.log(term);
@@ -26,8 +30,16 @@ class App extends React.Component {
     // });
 
     // User can use either .then for a callback to return a promise or use async await to get the results
-
+    console.log(response.data.results);
     this.setState({ images: response.data.results });
+  };
+
+  onSearchBankSubmit = async (cityName) => {
+    const response = await bank.get(`/api/branches/city/${cityName}/limit/3`, {
+      headers: { "Access-Control-Allow-Origin": "*" },
+    });
+    console.log(response.branches);
+    this.setState({ branches: response.branches });
   };
 
   render() {
@@ -35,6 +47,9 @@ class App extends React.Component {
       <div className="ui container" style={{ marginTop: "10px" }}>
         <SearchBar onSubmit={this.onSearchSubmit} />
         Found {this.state.images.length} images
+        <ImageList images={this.state.images} />
+        <SearchBank onSubmit={this.onSearchBankSubmit} />
+        <BanksList branches={this.state.branches} />
       </div>
     );
   }
