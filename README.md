@@ -37,3 +37,11 @@ React App --> AJAX Client ---> Send request with data ---> API ---> response bac
 
 1. axios - npm package
 2. fetch - built in modern browsers
+<br>
+<h3>getting Data using axios</h3>
+<p>axios.get("https://api.unsplash.com/search/photos", {
+      params: { query: term },
+      headers: {
+        Authorization: "Client-ID <API Access Key>",
+      },
+    });</p>
