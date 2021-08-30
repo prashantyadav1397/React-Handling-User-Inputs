@@ -34,3 +34,6 @@ this.props.onSubmit(this.state.term);
 ### Data loading from the API
 
 React App --> AJAX Client ---> Send request with data ---> API ---> response back to AJAX client
+
+1. axios - npm package
+2. fetch - built in modern browsers
