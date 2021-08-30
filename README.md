@@ -37,7 +37,7 @@ React App --> AJAX Client ---> Send request with data ---> API ---> response bac
 
 1. axios - npm package
 2. fetch - built in modern browsers
-<br>
+
 <h3>getting Data using axios</h3>
 <p>axios.get("https://api.unsplash.com/search/photos", {
       params: { query: term },
@@ -45,3 +45,17 @@ React App --> AJAX Client ---> Send request with data ---> API ---> response bac
         Authorization: "Client-ID <API Access Key>",
       },
     });</p>
+
+### Async await and .then()
+
+Either use async await or .then() to return the promise returned
+
+Async- await
+async onSearchSubmit(term) {
+const resopnse = await axios.get('',{})
+}
+
+.then
+onSearchSubmit(term){
+axios.get('',{}).then();
+}
