@@ -18,7 +18,9 @@ class SearchBar extends React.Component {
   // changing the onFormSubmit method to arrow function to avoid error state of "can't read the property of undefined"
   onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.term);
+
+    // callback to the parent function defined in the App class component
+    this.props.onSubmit(this.state.term);
   };
   render() {
     return (
