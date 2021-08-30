@@ -59,3 +59,12 @@ const resopnse = await axios.get('',{})
 onSearchSubmit(term){
 axios.get('',{}).then();
 }
+
+### Creating default properties for axios
+
+export default axios.create({
+baseURL: "https://api.unsplash.com",
+headers: {
+Authorization: "Client-ID <API Access Key>",
+},
+});
