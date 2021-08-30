@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
 import SearchBar from "./SearchBar";
+import unsplash from "../API/Unsplash";
 
 class App extends React.Component {
   // adding state to the component to handle reponse  from async requests
@@ -8,11 +8,17 @@ class App extends React.Component {
   // method for getting a callback from the child to pass the data up the hierarchy
   onSearchSubmit = async (term) => {
     // console.log(term);
-    const response = await axios.get("https://api.unsplash.com/search/photos", {
+    // Calling axios directly
+    // const response = await unsplash.get("https://api.unsplash.com/search/photos", {
+
+    // calling the API with a predefined config setup
+    const response = await unsplash.get("/search/photos", {
       params: { query: term },
-      headers: {
-        Authorization: "Client-ID pCwFppU6-rRuHZaQ2oBpv7le1USkf_1el13xU-N_qPI",
-      },
+
+      // moving common config to a specific file - helps code clean up and avoid un-necessary output of details like keys
+      // headers: {
+      //   Authorization: "Client-ID pCwFppU6-rRuHZaQ2oBpv7le1USkf_1el13xU-N_qPI",
+      // },
     });
     //  .then return the promise
     // .then((response) => {

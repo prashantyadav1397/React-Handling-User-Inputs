@@ -50,12 +50,12 @@ React App --> AJAX Client ---> Send request with data ---> API ---> response bac
 
 Either use async await or .then() to return the promise returned
 
-Async- await
+Async- await <br>
 async onSearchSubmit(term) {
 const resopnse = await axios.get('',{})
 }
 
-.then
+.then <br>
 onSearchSubmit(term){
 axios.get('',{}).then();
 }
