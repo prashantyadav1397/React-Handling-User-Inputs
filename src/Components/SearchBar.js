@@ -61,8 +61,10 @@ class SearchBar extends React.Component {
               type="button"
               className="ui button"
               style={{
-                "padding-top": "10px",
-                "margin-top": "10px",
+                backgroundColor: "black",
+                color: "white",
+                paddingTop: "10px",
+                marginTop: "10px",
               }}
               onClick={(e) => {
                 this.setState({ term: "" });
