@@ -30,3 +30,7 @@ use the props inside the child to grab the value from user input and pass up the
 this.props.onSubmit(this.state.term);
 
 </p>
+
+### Data loading from the API
+
+React App --> AJAX Client ---> Send request with data ---> API ---> response back to AJAX client
