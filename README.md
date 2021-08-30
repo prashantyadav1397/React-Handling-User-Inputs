@@ -42,7 +42,7 @@ React App --> AJAX Client ---> Send request with data ---> API ---> response bac
 <p>axios.get("https://api.unsplash.com/search/photos", {
       params: { query: term },
       headers: {
-        Authorization: "Client-ID <API Access Key>",
+        Authorization: "Client-ID API_Access_Key",
       },
     });</p>
 
@@ -65,7 +65,7 @@ axios.get('',{}).then();
 export default axios.create({
 baseURL: "https://api.unsplash.com",
 headers: {
-Authorization: "Client-ID <API Access Key>",
+Authorization: "Client-ID API_Access_Key",
 },
 });
 
@@ -82,5 +82,7 @@ Authorization: "Client-ID <API Access Key>",
 </p>
 <p> Using ref in JSX tag</p>
 <p>
- <img ref={this.imageRef} alt={description} src={urls.regular} />
+ <
+ Img ref={this.imageRef} alt={description} src={urls.regular} 
+ />
 </p>
